@@ -1,6 +1,15 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
+  def postulate
+    @job = Job.find(params[:id])
+    current_user.jobs << @job
+    redirect_to @job, notice: 'Has sido postulado exitosamente.'
+  end
 
+  def my_postulations
+    @user = current_user
+    @postulations = @user.jobs
+  end
   # GET /jobs or /jobs.json
   def index
     @jobs = Job.all
@@ -8,6 +17,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1 or /jobs/1.json
   def show
+    @job = Job.find(params[:id])
   end
 
   # GET /jobs/new
@@ -67,4 +77,6 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:name, :description)
     end
+
+
 end

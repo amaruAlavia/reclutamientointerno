@@ -2,7 +2,14 @@
 
 <%= render @job %>
 
+
+
+
 <div>
+  <% if user_signed_in? %>
+    <%= button_to "Postular", postulate_job_path(@job), method: :post %>
+  <% end %>
+
   <%= link_to "Edit this job", edit_job_path(@job) %> |
   <%= link_to "Back to jobs", jobs_path %>
 

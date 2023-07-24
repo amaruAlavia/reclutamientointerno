@@ -1,0 +1,6 @@
+<h1>Mis Postulaciones</h1>
+
+<% current_user.jobs.each do |job| %>
+  <p><%= job.name %></p>
+  <p><%= job.description %></p>
+<% end %>
