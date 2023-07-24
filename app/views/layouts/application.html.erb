@@ -28,6 +28,15 @@
           <li class="nav-item">
             <%= link_to "Mis Postulaciones", my_postulations_path, class: "nav-link" %>
           </li>
+
+          <li class="nav-item">
+          <% if @user.profile_picture.attached? %>
+          <img src="<%= url_for(@user.profile_picture) %>" alt="Image" style="width: 50px; height: 50px;">
+          <% else %>
+            <p>No hay imagen de perfil.</p>
+          <% end %>
+          </li>
+
           <!-- Mostrar botón de Cerrar Sesión si el usuario ha iniciado sesión -->
           <li class="nav-item">
             <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "nav-link" %>

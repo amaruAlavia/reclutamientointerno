@@ -75,3 +75,5 @@ gem "devise", "~> 4.9"
 gem "activestorage", "~> 7.0"
 gem "figaro", "~> 1.2"
 gem "aws-sdk-s3", "~> 1.131"
+
+gem "image_processing", "~> 1.12"
