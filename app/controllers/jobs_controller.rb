@@ -1,5 +1,11 @@
 class JobsController < ApplicationController
+  before_action :set_user
   before_action :set_job, only: %i[ show edit update destroy ]
+
+  def set_user
+    @user = current_user
+  end
+
   def postulate
     @job = Job.find(params[:id])
     current_user.jobs << @job
