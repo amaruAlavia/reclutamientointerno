@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get 'jobs/my_postulations', to: 'jobs#my_postulations', as: :my_postulations
 #  resources :jobs
   devise_for :users, controllers: { sessions: 'users/sessions' }
-  root "jobs#index"
+  #root "jobs#index"
+  root "general#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
