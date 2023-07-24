@@ -2,7 +2,12 @@
 
 <h1>Ofertas de Trabajo</h1>
 
-<div id="jobs">
+
+
+
+<div class="card text-bg-success mb-3">
+  <div class="card-body">
+  <div id="jobs">
   <% @jobs.each do |job| %>
     <%= render job %>
     <p>
@@ -10,5 +15,11 @@
     </p>
   <% end %>
 </div>
+  </div>
+</div>
 
-<%= link_to "New job", new_job_path %>
+
+
+
+
+
