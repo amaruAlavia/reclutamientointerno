@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   # Ruta personalizada para mostrar las postulaciones del usuario
   get 'jobs/my_postulations', to: 'jobs#my_postulations', as: :my_postulations
+  get '/modelo', to: 'general#modelo', as: :modelo
 #  resources :jobs
   devise_for :users, controllers: { sessions: 'users/sessions' }
   #root "jobs#index"

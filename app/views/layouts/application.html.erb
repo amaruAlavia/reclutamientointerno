@@ -27,6 +27,9 @@
       <li class="nav-item">
         <%= link_to "Ofertas de Trabajo", jobs_path, class: "nav-link" %>
       </li>
+      <li class="nav-item">
+      <%= link_to "Modelo de entidades", modelo_path, class: "nav-link" %>
+    </li>
         <% if user_signed_in? %>
           <!-- Mostrar enlace a "Mis Postulaciones" si el usuario ha iniciado sesión -->
           <li class="nav-item">
@@ -39,9 +42,7 @@
           <% else %>
           <p>No hay imagen de perfil.</p>
           <% end %>
-
           </li>
-
           <!-- Mostrar botón de Cerrar Sesión si el usuario ha iniciado sesión -->
           <li class="nav-item">
             <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "nav-link" %>
@@ -52,6 +53,7 @@
             <%= link_to "Iniciar Sesión", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+
       </ul>
     </div>
   </div>
